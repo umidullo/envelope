@@ -1,0 +1,204 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap');
+
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-rose-gold: #B76E79;
+  --color-rose-gold-light: #E6C9C3;
+  --color-blush-pink: #FFE5E5;
+  --color-blush-pink-dark: #FFC0CB;
+  --color-white: #FFFFFF;
+  --color-cream: #FFF8F5;
+  --color-gray: #F5F5F5;
+  --color-dark-gray: #6B6B6B;
+  --color-black: #2C2C2C;
+  --color-gold: #D4AF37;
+  --color-sage: #B5C99A;
+
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+
+  /* Spacing */
+  --section-padding: 80px;
+  --section-padding-mobile: 40px;
+  --container-max-width: 1200px;
+
+  /* Transitions */
+  --transition-default: all 0.3s ease-in-out;
+  --transition-slow: all 0.5s ease-in-out;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(183, 110, 121, 0.1);
+  --shadow-md: 0 4px 8px rgba(183, 110, 121, 0.15);
+  --shadow-lg: 0 8px 16px rgba(183, 110, 121, 0.2);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-black);
+  background-color: var(--color-cream);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-rose-gold);
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  margin-bottom: 1em;
+  color: var(--color-dark-gray);
+}
+
+a {
+  color: var(--color-rose-gold);
+  text-decoration: none;
+  transition: var(--transition-default);
+}
+
+a:hover {
+  color: var(--color-rose-gold-light);
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Spacing */
+.section {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile) 0;
+  }
+}
+
+/* Button Reset */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Input Reset */
+input,
+textarea,
+select {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* List Reset */
+ul, ol {
+  list-style: none;
+}
+
+/* Image Optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-script {
+  font-family: var(--font-script);
+  color: var(--color-rose-gold);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.bg-cream {
+  background-color: var(--color-cream);
+}
+
+.bg-blush {
+  background-color: var(--color-blush-pink);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-rose-gold-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-rose-gold);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-rose-gold-light);
+  color: var(--color-white);
+}
+
+::-moz-selection {
+  background: var(--color-rose-gold-light);
+  color: var(--color-white);
+}

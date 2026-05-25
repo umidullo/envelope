@@ -1,0 +1,59 @@
+.preloader-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--color-white, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.preloader-svg {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+}
+
+.preloader-text {
+  font-family: var(--font-script), 'Great Vibes', cursive;
+  font-size: 5.5rem;
+  fill: transparent;
+  stroke: var(--color-rose-gold, #b76e79);
+  stroke-width: 1.5px;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: drawText 3s ease-in-out forwards, fillText 1s ease 2.5s forwards;
+}
+
+@keyframes drawText {
+  0% {
+    stroke-dashoffset: 1200;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillText {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: var(--color-rose-gold, #b76e79);
+  }
+}
+
+@media (max-width: 768px) {
+  .preloader-text {
+    font-size: 5.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-text {
+    font-size: 6.5rem;
+  }
+}
