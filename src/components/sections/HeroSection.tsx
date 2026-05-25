@@ -8,12 +8,15 @@ const TEXT = {
   groomName: "Sarvar",
   brideName: "Shohida",
   tagline: "Nikoh to'yiga taklif etishadi",
-  date: "20-iyun, 2026",
-  venue: "Omad Restorani, Urganch",
   scrollLabel: "Keyingi bo'limga o'tish",
 };
 
-export const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  date: string;
+  venue: string;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ date, venue }) => {
   const scrollToNext = () => {
     const storySection = document.querySelector("#story");
     if (storySection) {
@@ -68,7 +71,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 1, delay: 1.2 }}
           >
             <div className="hero-date-line"></div>
-            <p>{TEXT.date}</p>
+            <p>{date}</p>
             <div className="hero-date-line"></div>
           </motion.div>
 
@@ -78,7 +81,7 @@ export const HeroSection: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.4 }}
           >
-            {TEXT.venue}
+            {venue}
           </motion.p>
         </motion.div>
       </div>
