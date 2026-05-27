@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Clock, MapPin, Heart } from "lucide-react";
 import { Footer } from "@components/layout/Footer";
 import { HeroSection } from "@components/sections/HeroSection";
-import { Button, Card, Preloader } from "@components/ui";
+import { Button, Card, MusicPlayer, Preloader } from "@components/ui";
 import { useCountdown } from "@hooks/useCountdown";
 import "./App.css";
 
@@ -63,7 +63,7 @@ function getVisibleWeddings(): typeof WEDDINGS {
   const param = new URLSearchParams(window.location.search).get("city");
   if (param) {
     const match = WEDDINGS.find(
-      (w) => w.city.toLowerCase() === param.toLowerCase()
+      (w) => w.city.toLowerCase() === param.toLowerCase(),
     );
     if (match) return [match];
   }
@@ -97,6 +97,7 @@ function App() {
       </AnimatePresence>
 
       {/* <Header /> */}
+      <MusicPlayer />
 
       <main>
         {/* Hero Section */}
