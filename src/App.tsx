@@ -5,7 +5,7 @@ import { Footer } from "@components/layout/Footer";
 import { HeroSection } from "@components/sections/HeroSection";
 import { Button, Card, MusicPlayer, Preloader } from "@components/ui";
 import { useCountdown } from "@hooks/useCountdown";
-import { getVisibleWeddings } from "@/data/wedding";
+import { WEDDINGS } from "@/data/wedding";
 import "./App.css";
 
 const TEXT = {
@@ -50,7 +50,7 @@ function App() {
     }
   }, [isLoading]);
 
-  const visibleWeddings = getVisibleWeddings();
+  const visibleWeddings = WEDDINGS.filter((w) => w.city === "Urganch");
   const now = new Date();
   const countdownTarget =
     visibleWeddings.find((w) => new Date(w.datetime) > now) ??

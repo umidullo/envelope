@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { MusicPlayer, Preloader } from "@components/ui";
 import { useCountdown } from "@hooks/useCountdown";
-import { getVisibleWeddings } from "@/data/wedding";
+import { WEDDINGS } from "@/data/wedding";
 import "./SecondaryPage.css";
 
 const TEXT = {
@@ -54,7 +54,7 @@ export default function SecondaryPage() {
     document.body.style.overflow = isLoading ? "hidden" : "unset";
   }, [isLoading]);
 
-  const visibleWeddings = getVisibleWeddings();
+  const visibleWeddings = WEDDINGS.filter((w) => w.city === "Toshkent");
   const now = new Date();
   const countdownTarget =
     visibleWeddings.find((w) => new Date(w.datetime) > now) ??
