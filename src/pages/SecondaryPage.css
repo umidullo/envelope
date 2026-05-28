@@ -6,6 +6,32 @@
   font-family: var(--font-body);
 }
 
+/* ── Scrollbar ── */
+html.sp-theme {
+  scrollbar-color: #9DBF90 #EEF6E8; /* Firefox + Chrome 121+ */
+}
+
+html.sp-theme::-webkit-scrollbar-track {
+  background: #EEF6E8 !important;
+}
+
+html.sp-theme::-webkit-scrollbar-thumb {
+  background: #9DBF90 !important;
+  border-radius: 5px;
+}
+
+html.sp-theme::-webkit-scrollbar-thumb:hover {
+  background: #6B8F5E !important;
+}
+
+html.sp-theme ::selection {
+  background: #9DBF90;
+}
+
+html.sp-theme ::-moz-selection {
+  background: #9DBF90;
+}
+
 /* ── Hero ── */
 .sp-hero {
   min-height: 100vh;

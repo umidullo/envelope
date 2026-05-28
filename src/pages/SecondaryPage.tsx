@@ -51,6 +51,11 @@ export default function SecondaryPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    document.documentElement.classList.add("sp-theme");
+    return () => document.documentElement.classList.remove("sp-theme");
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = isLoading ? "hidden" : "unset";
   }, [isLoading]);
 
@@ -65,11 +70,11 @@ export default function SecondaryPage() {
     <div className="sp-app">
       <AnimatePresence>
         {isLoading && (
-          <Preloader key="preloader" onComplete={() => setIsLoading(false)} />
+          <Preloader key="preloader" onComplete={() => setIsLoading(false)} variant="secondary" />
         )}
       </AnimatePresence>
 
-      <MusicPlayer />
+      <MusicPlayer variant="secondary" />
 
       <main>
         {/* Hero */}

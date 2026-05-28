@@ -23,6 +23,15 @@
   color: var(--color-rose-gold, #b76e79);
 }
 
+.music-player-btn--secondary {
+  background: #6B8F5E;
+}
+
+.music-player-btn--secondary:hover {
+  background: #EEF6E8;
+  color: #4A7A40;
+}
+
 .music-player-btn.playing svg {
   animation: music-pulse 2s infinite ease-in-out;
 }

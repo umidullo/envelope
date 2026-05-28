@@ -3,7 +3,11 @@ import { Volume2, VolumeX } from "lucide-react";
 import musicFile from "../../assets/music.mp3";
 import "./MusicPlayer.css";
 
-export const MusicPlayer: React.FC = () => {
+interface MusicPlayerProps {
+  variant?: "primary" | "secondary";
+}
+
+export const MusicPlayer: React.FC<MusicPlayerProps> = ({ variant = "primary" }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -92,7 +96,7 @@ export const MusicPlayer: React.FC = () => {
         onPause={() => setIsPlaying(false)}
       />
       <button
-        className={`music-player-btn ${isPlaying ? "playing" : ""}`}
+        className={`music-player-btn music-player-btn--${variant} ${isPlaying ? "playing" : ""}`}
         onClick={(e) => {
           e.stopPropagation();
           togglePlay();

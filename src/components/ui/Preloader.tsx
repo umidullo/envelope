@@ -4,9 +4,10 @@ import "./Preloader.css";
 
 interface PreloaderProps {
   onComplete: () => void;
+  variant?: "primary" | "secondary";
 }
 
-export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
+export const Preloader: React.FC<PreloaderProps> = ({ onComplete, variant = "primary" }) => {
   useEffect(() => {
     // Wait for the animation to finish before triggering onComplete
     // 3.5s covers the 3s draw + 0.5s pause to read it
@@ -19,7 +20,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
 
   return (
     <motion.div
-      className="preloader-container"
+      className={`preloader-container preloader-container--${variant}`}
       initial={{ y: 0 }}
       exit={{ y: "-100%", opacity: 0.8 }}
       transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}

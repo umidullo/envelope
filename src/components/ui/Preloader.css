@@ -2,11 +2,18 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: var(--color-white, #ffffff);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.preloader-container--primary {
+  background: var(--color-white, #ffffff);
+}
+
+.preloader-container--secondary {
+  background: #F5FAF2;
 }
 
 .preloader-svg {
@@ -26,6 +33,11 @@
   animation: drawText 3s ease-in-out forwards, fillText 1s ease 2.5s forwards;
 }
 
+.preloader-container--secondary .preloader-text {
+  stroke: #6B8F5E;
+  animation: drawText 3s ease-in-out forwards, fillTextGreen 1s ease 2.5s forwards;
+}
+
 @keyframes drawText {
   0% {
     stroke-dashoffset: 1200;
@@ -43,6 +55,16 @@
 
   100% {
     fill: var(--color-rose-gold, #b76e79);
+  }
+}
+
+@keyframes fillTextGreen {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: #6B8F5E;
   }
 }
 
